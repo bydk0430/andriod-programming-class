@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.student.multimemo">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.example.student.multimemo.MultiMemoActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.student.multimemo.MemoInsertActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name="com.example.student.multimemo.PhotoCaptureActivity"
+            android:screenOrientation="landscape"
+            >
+        </activity>
+
+        <activity
+            android:name="com.example.student.multimemo.PhotoSelectionActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name="com.example.student.multimemo.HandwritingMakingActivity"
+            android:screenOrientation="landscape"
+            >
+        </activity>
+        <activity
+            android:name="com.example.student.multimemo.PenPaletteDialog"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            android:screenOrientation="landscape"
+            >
+        </activity>
+        <activity
+            android:name="com.example.student.multimemo.ColorPaletteDialog"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            android:screenOrientation="landscape"
+            >
+        </activity>
+
+        <activity
+            android:name="com.example.student.multimemo.VideoRecordingActivity"
+            android:screenOrientation="landscape"
+            >
+        </activity>
+        <activity
+            android:name="com.example.student.multimemo.VideoPlayActivity"
+            android:screenOrientation="landscape"
+            >
+        </activity>
+        <activity
+            android:name="com.example.student.multimemo.VideoSelectionActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="com.example.student.multimemo.VoiceRecordingActivity"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="com.example.student.multimemo.VoicePlayActivity"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+    </application>
+
+</manifest>
