@@ -50,17 +50,21 @@ public class MovieListActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1,list);
 
         // 3-1. 새로 만든 어답터를 등록한다.
-        ListViewAdapter listViewAdapter = new ListViewAdapter(
-                MovieListActivity.this, R.layout.listview_item, arrayList);
+//        ListViewAdapter listViewAdapter = new ListViewAdapter(
+//                MovieListActivity.this, R.layout.listview_item, arrayList);
 
 
-        lv_movielist.setAdapter(listViewAdapter);
+        ListViewAdapter2 listViewAdapter2 = new ListViewAdapter2(
+                MovieListActivity.this, R.layout.listview_item2, arrayList);
+
+
+        lv_movielist.setAdapter(listViewAdapter2);
 
         //  4.리스트뷰에 onItemClickListener 등록하기
         lv_movielist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
-                Toast.makeText(MovieListActivity.this, i + " 선택함",Toast.LENGTH_LONG).show();
+                Toast.makeText(MovieListActivity.this, i + " 선택함",Toast.LENGTH_SHORT).show();
 
             }
         });

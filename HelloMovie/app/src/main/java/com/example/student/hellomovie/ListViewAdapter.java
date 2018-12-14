@@ -1,6 +1,7 @@
 package com.example.student.hellomovie;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,8 @@ import java.util.ArrayList;
  */
 
 public class ListViewAdapter extends BaseAdapter {
-    ArrayList<ListViewItem> list;   //  자료를 저장하고 있는 ArrayList
+    //  자료를 저장하고 있는 ArrayList
+    ArrayList<ListViewItem> list;
     Context context;
     int item_layout;
     LayoutInflater layoutInflater;
@@ -61,12 +63,19 @@ public class ListViewAdapter extends BaseAdapter {
         iv_thumb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "그림을 선택했습니다", Toast.LENGTH_LONG).show();
+                Toast.makeText(context,
+                       list.get(pos).getTitle()+"를(을) 선택하셨습니다" ,
+                        Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(context, InfoActivity.class);
+                intent.putExtra("movie_index", pos);
+                intent.putExtra("movie_title", list.get(pos).getTitle());
+                intent.putExtra("movie_date", list.get(pos).getDate());
+                intent.putExtra("movie_img_id", list.get(pos).getImg_id());
+                context.startActivity(intent);
             }
         });
-        /**
-         *  텍스트 뷰로 제목이랑 날짜 넣어보기
-         */
+
         TextView tv_title = (TextView) view.findViewById(R.id.tv_title);
         tv_title.setText(list.get(pos).getTitle());
 
